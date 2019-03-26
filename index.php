@@ -154,15 +154,18 @@
         <input type="submit" name="submitquiz" value="Submit">
         
         <?php
-        $answers = array('A','B','C','D','B','C','D','A','C','D','D','C','A','B','C','B','C','B','A','B');
-        $score = 0; 
-        if (isset($_POST['submitquiz'])) {
-            if(!empty($_POST['options'])) {
-                
-            }
+           $answers = array('A','B','C','D','B','C','D','A','C','D','D','C','A','B','C','B','C','B','A','B');
+           $score = 0; 
+           if (isset($_POST['submitquiz'])) {
+               if(!empty($_POST['options'])) {
+                   if ($keyanswer == $_POST[$key]) {
+                       $score++;
+               }
+              }
            }
-        ?>
-
-        
+   
+           echo "You scored: $score out of count($questions) <br/>";
+           ?>
+           
     </body>
 </html>
